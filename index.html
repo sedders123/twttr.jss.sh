@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Drafter</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/twitter-text.3.0.1.min.js"></script>
+  </head>
+  <body>
+    <section class="content">
+      <textarea id="tweet" placeholder="Enter your draft tweet here..."></textarea>
+      <p id="output">Used 0/280 characters</p>
+    </section>
+  </body>
+  <script>
+    const tweet = document.getElementById("tweet");
+    const output = document.getElementById("output");
+    //check tweet when text area changes
+    tweet.addEventListener("input", (event) =>{
+      const text = event.target.value;
+      const validationResult = window.twttr.txt.parseTweet(text);
+      output.innerText = `Used ${validationResult.weightedLength}/280 characters`
+      if(!validationResult.valid && validationResult.weightedLength > 0){
+        output.classList.add("error");
+      }else{
+        if(output.classList.contains("error")){
+          output.classList.remove("error");
+        }
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,39 @@
+body {
+  background-color: rgba(18, 18, 18, 1);
+  color: rgba(255, 255, 255, 0.87);
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.content h1 {
+  margin-bottom: 1.5rem;
+}
+
+.content textarea {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.87);
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 1em;
+  width: 80%;
+  height: 10em;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(8, 8, 8, 1);
+  border: 5px solid transparent;
+  margin-bottom: 1rem;
+}
+
+.content textarea:focus {
+  outline: none;
+}
+
+.error {
+  color: #cf6679;
+}
